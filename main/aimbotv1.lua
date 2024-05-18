@@ -180,19 +180,19 @@ local function aimAt(player)
         local head = player.Character.Head
         local camera = workspace.CurrentCamera
         
- --[[       -- Cancel any previous tween
+        -- Cancel any previous tween
         if currentTween then
             currentTween:Cancel()
         end
         
-        -- Create a new tween to smoothly transition the camera
+        -- Create a new tween to smoothly transition the camera but nah change the TweenInfo.new(num here, to add it back
         local goal = { CFrame = CFrame.new(camera.CFrame.Position, head.Position) }
-        local tweenInfo = TweenInfo.new(0.036, Enum.EasingStyle.Quad, Enum.EasingDirection.Out)
+        local tweenInfo = TweenInfo.new(0, Enum.EasingStyle.Quad, Enum.EasingDirection.Out)
         currentTween = TweenService:Create(camera, tweenInfo, goal)
         currentTween:Play()
     end
 end
-]]
+
 RunService.RenderStepped:Connect(function()
     if aimbotEnabled then
         local closestPlayer = getClosestPlayer()
