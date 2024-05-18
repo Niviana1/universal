@@ -42,7 +42,7 @@ local onButton = createInstance("TextButton", {
     Size = UDim2.new(0, 120, 0, 40),
     Position = UDim2.new(0, 10, 0, 30),
     Text = "Aimbot: Off",
-    BackgroundColor3 = Color3.fromRGB(200, 0, 0), -- Start with red
+    BackgroundColor3 = Color3.fromRGB(200, 0, 0), 
     TextColor3 = Color3.fromRGB(255, 255, 255),
     Font = Enum.Font.SourceSans,
     TextSize = 24,
@@ -77,7 +77,7 @@ local checkBox = createInstance("TextButton", {
     Parent = checkBoxFrame
 })
 
--- Toggle Aimbot Button functionality
+-- Toggle Aimbot 
 local aimbotEnabled = false
 onButton.MouseButton1Click:Connect(function()
     aimbotEnabled = not aimbotEnabled
@@ -92,7 +92,7 @@ onButton.MouseButton1Click:Connect(function()
     tweenColor:Play()
 end)
 
--- Checkbox functionalities
+-- Checkbox 
 local teamCheck = false
 checkBox.MouseButton1Click:Connect(function()
     teamCheck = not teamCheck
@@ -102,7 +102,6 @@ checkBox.MouseButton1Click:Connect(function()
     tween:Play()
 end)
 
--- Make the GUI draggable
 local dragging, dragInput, dragStart, startPos
 
 local function update(input)
@@ -181,7 +180,7 @@ local function aimAt(player)
         local head = player.Character.Head
         local camera = workspace.CurrentCamera
         
-        -- Cancel any previous tween
+ --[[       -- Cancel any previous tween
         if currentTween then
             currentTween:Cancel()
         end
@@ -193,7 +192,7 @@ local function aimAt(player)
         currentTween:Play()
     end
 end
-
+]]
 RunService.RenderStepped:Connect(function()
     if aimbotEnabled then
         local closestPlayer = getClosestPlayer()
