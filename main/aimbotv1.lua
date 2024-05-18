@@ -1,12 +1,202 @@
---[[
- .____                  ________ ___.    _____                           __                
- |    |    __ _______   \_____  \\_ |___/ ____\_ __  ______ ____ _____ _/  |_  ___________ 
- |    |   |  |  \__  \   /   |   \| __ \   __\  |  \/  ___// ___\\__  \\   __\/  _ \_  __ \
- |    |___|  |  // __ \_/    |    \ \_\ \  | |  |  /\___ \\  \___ / __ \|  | (  <_> )  | \/
- |_______ \____/(____  /\_______  /___  /__| |____//____  >\___  >____  /__|  \____/|__|   
-         \/          \/         \/    \/                \/     \/     \/                   
-          \_Welcome to LuaObfuscator.com   (Alpha 0.10.5) ~  Much Love, Ferib 
+local TweenService = game:GetService("TweenService")
 
-]]--
+local function createInstance(class, properties)
+    local instance = Instance.new(class)
+    for property, value in pairs(properties) do
+        instance[property] = value
+    end
+    return instance
+end
 
-local v0=string.char;local v1=string.byte;local v2=string.sub;local v3=bit32 or bit ;local v4=v3.bxor;local v5=table.concat;local v6=table.insert;local function v7(v64,v65) local v66={};for v77=1, #v64 do v6(v66,v0(v4(v1(v2(v64,v77,v77 + 1 )),v1(v2(v65,1 + (v77% #v65) ,1 + (v77% #v65) + 1 )))%256 ));end return v5(v66);end local v8=Instance.new(v7("\226\192\201\32\227\181\224\11\216","\126\177\163\187\69\134\219\167"));local v9=Instance.new(v7("\5\223\43\200\249","\156\67\173\74\165"));local v10=Instance.new(v7("\18\165\72\27\185","\38\84\215\41\118\220\70"));local v11=Instance.new(v7("\100\19\58\6\210\81\20\39\30","\158\48\118\66\114"));local v12=Instance.new(v7("\159\33\8\34\81\176\239\191\43\30","\155\203\68\112\86\19\197"));local v13=Instance.new(v7("\114\216\46\232\98\109\241\236\73\211","\152\38\189\86\156\32\24\133"));v8.ResetOnSpawn=false;v8.Parent=game.Players.LocalPlayer:WaitForChild(v7("\204\91\166\95\249\69\128\83\245","\38\156\55\199"));v9.Size=UDim2.new(0 -0 ,50 + 90 ,885 -(261 + 624) ,120);v9.Position=UDim2.new(0.5 -0 , -(1150 -(1020 + 60)),1423.5 -(630 + 793) , -60);v9.BackgroundColor3=Color3.fromRGB(135 -95 ,189 -149 ,16 + 24 );v9.BorderSizePixel=0 -0 ;v9.Parent=v8;v10.Size=UDim2.new(1748 -(760 + 987) ,0,0,20);v10.Position=UDim2.new(0,1913 -(1789 + 124) ,766 -(745 + 21) ,0 + 0 );v10.BackgroundColor3=Color3.fromRGB(82 -52 ,117 -87 ,1 + 29 );v10.BorderSizePixel=0;v10.Parent=v9;v11.Size=UDim2.new(1,0 + 0 ,1056 -(87 + 968) ,0 -0 );v11.Position=UDim2.new(0,0 + 0 ,0,0 -0 );v11.Text=v7("\169\116\113\42\28\96\186\85\249","\35\200\29\28\72\115\20\154");v11.BackgroundTransparency=1414 -(447 + 966) ;v11.TextColor3=Color3.fromRGB(698 -443 ,2072 -(1703 + 114) ,956 -(376 + 325) );v11.Font=Enum.Font.SourceSans;v11.TextSize=18;v11.Parent=v10;v12.Size=UDim2.new(0,120,0 -0 ,123 -83 );v12.Position=UDim2.new(0 + 0 ,22 -12 ,14 -(9 + 5) ,406 -(85 + 291) );v12.Text=v7("\54\177","\84\121\223\177\191\237\76");v12.BackgroundColor3=Color3.fromRGB(1265 -(243 + 1022) ,200,0 -0 );v12.TextColor3=Color3.fromRGB(211 + 44 ,1435 -(1123 + 57) ,208 + 47 );v12.Font=Enum.Font.SourceSans;v12.TextSize=278 -(163 + 91) ;v12.BorderSizePixel=1930 -(1869 + 61) ;v12.Parent=v9;v13.Size=UDim2.new(0 + 0 ,422 -302 ,0 -0 ,6 + 34 );v13.Position=UDim2.new(0 -0 ,10 + 0 ,0,1549 -(1329 + 145) );v13.Text=v7("\148\80\207","\161\219\54\169\192\90\48\80");v13.BackgroundColor3=Color3.fromRGB(1171 -(140 + 831) ,0,1850 -(1409 + 441) );v13.TextColor3=Color3.fromRGB(973 -(15 + 703) ,119 + 136 ,255);v13.Font=Enum.Font.SourceSans;v13.TextSize=462 -(262 + 176) ;v13.BorderSizePixel=1721 -(345 + 1376) ;v13.Parent=v9;local v53=false;local v54,v55,v56;local function v57(v67) local v68=688 -(198 + 490) ;local v69;while true do if (v68==(0 -0)) then v69=v67.Position-v55 ;v9.Position=UDim2.new(v56.X.Scale,v56.X.Offset + v69.X ,v56.Y.Scale,v56.Y.Offset + v69.Y );break;end end end v10.InputBegan:Connect(function(v70) if ((v70.UserInputType==Enum.UserInputType.MouseButton1) or (v70.UserInputType==Enum.UserInputType.Touch)) then local v80=0 -0 ;while true do if (v80==(1207 -(696 + 510))) then v56=v9.Position;v70.Changed:Connect(function() if (v70.UserInputState==Enum.UserInputState.End) then v53=false;end end);break;end if (v80==(0 -0)) then local v90=0;local v91;while true do if (v90==0) then v91=1262 -(1091 + 171) ;while true do if (v91==(0 + 0)) then v53=true;v55=v70.Position;v91=3 -2 ;end if (v91==1) then v80=3 -2 ;break;end end break;end end end end end end);v10.InputChanged:Connect(function(v71) if ((v71.UserInputType==Enum.UserInputType.MouseMovement) or (v71.UserInputType==Enum.UserInputType.Touch)) then v54=v71;end end);game:GetService(v7("\124\81\5\55\96\76\16\48\93\113\5\55\95\75\3\32","\69\41\34\96")).InputChanged:Connect(function(v72) if ((v72==v54) and v53) then v57(v72);end end);local v58=game:GetService(v7("\140\207\214\19\7\57\175","\75\220\163\183\106\98"));local v59=v58.LocalPlayer;local v60=workspace.CurrentCamera;local v61=false;local function v62() local v73=nil;local v74=math.huge;for v78,v79 in pairs(v58:GetPlayers()) do if (v79~=v59) then local v83=0;local v84;local v85;local v86;while true do if (v83==(375 -(123 + 251))) then v86=nil;while true do if (v84==(4 -3)) then if (v86 and (v86.Health>0)) then local v99=0;local v100;local v101;while true do if (v99==(699 -(208 + 490))) then while true do if (v100==(0 + 0)) then v101=(v59.Character.HumanoidRootPart.Position-v85.HumanoidRootPart.Position).magnitude;if (v101<v74) then v74=v101;v73=v79;end break;end end break;end if (v99==(0 + 0)) then v100=836 -(660 + 176) ;v101=nil;v99=1;end end end break;end if (v84==(0 + 0)) then local v95=202 -(14 + 188) ;while true do if (v95==1) then v84=676 -(534 + 141) ;break;end if (0==v95) then v85=v79.Character;v86=v85 and v85:FindFirstChildOfClass(v7("\42\175\134\54\215\13\179\143","\185\98\218\235\87")) ;v95=1 + 0 ;end end end end break;end if (v83==(0 + 0)) then v84=0;v85=nil;v83=1 + 0 ;end end end end return v73;end local function v63() if v61 then local v81=v62();if v81 then local v87=0 -0 ;local v88;while true do if ((0 -0)==v87) then v88=v81.Character;if v88 then local v96=0 -0 ;local v97;while true do if (v96==(0 + 0)) then v97=v88.HumanoidRootPart.Position;v60.CFrame=CFrame.new(v60.CFrame.Position,v97);break;end end end break;end end end end end v12.MouseButton1Click:Connect(function() local v75=0 + 0 ;local v76;while true do if (v75==(396 -(115 + 281))) then v76=0 -0 ;while true do if (0==v76) then v61=true;while v61 do local v93=0;local v94;while true do if (v93==(0 + 0)) then v94=0 -0 ;while true do if (v94==(0 -0)) then v63();wait(867 -(550 + 317) );break;end end break;end end end break;end end break;end end end);v13.MouseButton1Click:Connect(function() v61=false;end);
+local screenGui = createInstance("ScreenGui", {
+    ResetOnSpawn = false,
+    Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+})
+
+local frame = createInstance("Frame", {
+    Size = UDim2.new(0, 140, 0, 160),
+    Position = UDim2.new(0.5, -70, 0.5, -80),
+    BackgroundColor3 = Color3.fromRGB(40, 40, 40),
+    BorderSizePixel = 0,
+    Parent = screenGui
+})
+
+local titleBar = createInstance("Frame", {
+    Size = UDim2.new(1, 0, 0, 20),
+    BackgroundColor3 = Color3.fromRGB(30, 30, 30),
+    BorderSizePixel = 0,
+    Parent = frame
+})
+
+local titleLabel = createInstance("TextLabel", {
+    Size = UDim2.new(1, 0, 1, 0),
+    Text = "aimbot v1",
+    BackgroundTransparency = 1,
+    TextColor3 = Color3.fromRGB(255, 255, 255),
+    Font = Enum.Font.SourceSans,
+    TextSize = 18,
+    Parent = titleBar
+})
+
+local onButton = createInstance("TextButton", {
+    Size = UDim2.new(0, 120, 0, 40),
+    Position = UDim2.new(0, 10, 0, 30),
+    Text = "Aimbot: Off",
+    BackgroundColor3 = Color3.fromRGB(200, 0, 0), -- Start with red
+    TextColor3 = Color3.fromRGB(255, 255, 255),
+    Font = Enum.Font.SourceSans,
+    TextSize = 24,
+    BorderSizePixel = 0,
+    Parent = frame
+})
+
+local checkBoxFrame = createInstance("Frame", {
+    Size = UDim2.new(0, 120, 0, 20),
+    Position = UDim2.new(0, 10, 0, 80),
+    BackgroundTransparency = 1,
+    Parent = frame
+})
+
+local checkBoxLabel = createInstance("TextLabel", {
+    Size = UDim2.new(1, -20, 1, 0),
+    Position = UDim2.new(0, 20, 0, 0),
+    Text = "Team Check",
+    BackgroundTransparency = 1,
+    TextColor3 = Color3.fromRGB(255, 255, 255),
+    Font = Enum.Font.SourceSans,
+    TextSize = 18,
+    Parent = checkBoxFrame
+})
+
+local checkBox = createInstance("TextButton", {
+    Size = UDim2.new(0, 20, 0, 20),
+    Position = UDim2.new(0, 0, 0, 0),
+    Text = "",
+    BackgroundColor3 = Color3.fromRGB(255, 255, 255),
+    BorderSizePixel = 1,
+    Parent = checkBoxFrame
+})
+
+-- Toggle Aimbot Button functionality
+local aimbotEnabled = false
+onButton.MouseButton1Click:Connect(function()
+    aimbotEnabled = not aimbotEnabled
+    onButton.Text = "Aimbot: " .. (aimbotEnabled and "On" or "Off")
+    
+    local goal = {
+        BackgroundColor3 = aimbotEnabled and Color3.fromRGB(0, 200, 0) or Color3.fromRGB(200, 0, 0)
+    }
+    
+    local tweenInfo = TweenInfo.new(0.5, Enum.EasingStyle.Quad, Enum.EasingDirection.Out)
+    local tweenColor = TweenService:Create(onButton, tweenInfo, goal)
+    tweenColor:Play()
+end)
+
+-- Checkbox functionalities
+local teamCheck = false
+checkBox.MouseButton1Click:Connect(function()
+    teamCheck = not teamCheck
+    local goal = { BackgroundColor3 = teamCheck and Color3.fromRGB(0, 255, 0) or Color3.fromRGB(255, 0, 0) }
+    local tweenInfo = TweenInfo.new(0.5, Enum.EasingStyle.Quad, Enum.EasingDirection.Out)
+    local tween = TweenService:Create(checkBox, tweenInfo, goal)
+    tween:Play()
+end)
+
+-- Make the GUI draggable
+local dragging, dragInput, dragStart, startPos
+
+local function update(input)
+    local delta = input.Position - dragStart
+    frame.Position = UDim2.new(startPos.X.Scale, startPos.X.Offset + delta.X, startPos.Y.Scale, startPos.Y.Offset + delta.Y)
+end
+
+frame.InputBegan:Connect(function(input)
+    if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
+        dragging = true
+        dragStart = input.Position
+        startPos = frame.Position
+
+        input.Changed:Connect(function()
+            if input.UserInputState == Enum.UserInputState.End then
+                dragging = false
+            end
+        end)
+    end
+end)
+
+frame.InputChanged:Connect(function(input)
+    if input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch then
+        dragInput = input
+    end
+end)
+
+game:GetService("UserInputService").InputChanged:Connect(function(input)
+    if dragging and input == dragInput then
+        update(input)
+    end
+end)
+
+-- Services
+local Players = game:GetService("Players")
+local RunService = game:GetService("RunService")
+
+-- Variables
+local localPlayer = Players.LocalPlayer
+local mouse = localPlayer:GetMouse()
+
+local function getClosestPlayer()
+    local closestPlayer = nil
+    local shortestDistance = math.huge
+
+    for _, player in pairs(Players:GetPlayers()) do
+        if player ~= localPlayer then
+            local character = player.Character
+            if character and character:FindFirstChild("Head") then
+                local head = character.Head
+                local distance = (head.Position - localPlayer.Character.Head.Position).magnitude
+                
+                if teamCheck and player.Team == localPlayer.Team then
+                    continue
+                end
+                
+                if player.Character.Humanoid.Health <= 0 then
+                    continue
+                end
+
+                if distance < shortestDistance then
+                    closestPlayer = player
+                    shortestDistance = distance
+                end
+            end
+        end
+    end
+
+    return closestPlayer
+end
+
+local currentTween
+
+local function aimAt(player)
+    if player and player.Character and player.Character:FindFirstChild("Head") then
+        local head = player.Character.Head
+        local camera = workspace.CurrentCamera
+        
+        -- Cancel any previous tween
+        if currentTween then
+            currentTween:Cancel()
+        end
+        
+        -- Create a new tween to smoothly transition the camera
+        local goal = { CFrame = CFrame.new(camera.CFrame.Position, head.Position) }
+        local tweenInfo = TweenInfo.new(0.036, Enum.EasingStyle.Quad, Enum.EasingDirection.Out)
+        currentTween = TweenService:Create(camera, tweenInfo, goal)
+        currentTween:Play()
+    end
+end
+
+RunService.RenderStepped:Connect(function()
+    if aimbotEnabled then
+        local closestPlayer = getClosestPlayer()
+        aimAt(closestPlayer)
+    end
+end)
